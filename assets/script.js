@@ -1,3 +1,80 @@
+var pkmon = document.querySelector(".altPkmon");
+var A = document.querySelector("#optionA")
+var B = document.querySelector("#optionB")
+var C = document.querySelector("#optionC")
+var D = document.querySelector("#optionD")
+
+
+//*image bank
+var index = 0;
+var currentImage;
+var images = [
+    "assets/img/squirtle.png",
+    "assets/img/eevee.png",
+    "assets/img/dragonite.png",
+    "assets/img/pika.png"
+  ];
+
+//*question logic
+
+  var questions = {
+
+    choices1: ["pika","2","3","4"],
+       
+    choices2: ["1","pika","3","4"],
+
+    choices3: ["1","2","pika","4"],
+    
+    choices4: ["1","2","3","pika"],
+ 
+    // choices5: ["1","2","3","4"],
+  }
+
+  var answers = {
+    answer1: ["pika"],
+    answer2: ["pika"],
+    answer3: ["pika"],
+    answer4: ["pika"],
+
+  }
+
+function linkButtons() {
+    var firstQuestion = questions.choices1;
+
+    if (firstQuestion.length >= 4) {
+        // Set the text content of each button
+        A.textContent = firstQuestion[0];
+        B.textContent = firstQuestion[1];
+        C.textContent = firstQuestion[2];
+        D.textContent = firstQuestion[3];
+      }
+    }
+linkButtons()
+//*buttons linked
+
+
+
+//*pkmon images go here
+  pkmon.style.backgroundImage = "assets/img/pika.png";
+
+  function navigate(direction) {
+    index = index + direction;
+    if (index < 0) { 
+      index = images.length - 1; 
+    } else if (index > images.length - 1) { 
+      index = 0;
+    }
+    currentImage = images[index];
+    pkmon.style.backgroundImage = "url('" + currentImage + "')";
+  }
+
+
+  pkmon.addEventListener("click", function(event) {
+   event.stopPropagation();
+
+    navigate(1);
+
+  });
 
 
 
@@ -7,16 +84,11 @@
 
 
 
+  navigate(0);
 
 
 
-
-
-
-
-
-
-
+  
 
 
 
@@ -66,3 +138,24 @@
 // *THEN the game is over
 // *WHEN the game is over
 // *THEN I can save my initials and my score
+
+
+//TODO make an if statement that says if choice === !answer deduct 10 from time-left until time =0
+
+
+//TODO make a conditional that says once time-left >= 0 alert you lose
+
+
+//TODO make a if statement that says once last question is answered take the time left as a score and put it in local storage
+
+
+//TODO once they get their score let them add 3 letters for initials and add that as a key and use the score as the value
+
+
+//TODO make a high-score list on page using a getItem from both the key and value and display that.
+
+
+//TODO create a function that will display the next question and choices once they answer the following question
+
+
+//TODO create a start button that wont display the questions until pressed

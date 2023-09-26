@@ -14,13 +14,42 @@
 }
 
 body {
-  font-size: 30px;
+  font-size: 20px;
   font-family: sans-serif;
   background-color: #eff5f8;
   /* color: var(--logo-blue); */
   /* text-shadow: var(--text-shadow); */
   color: #001b44;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+
+p {
+  display: inline-block;
+  margin: 25px;
+}
+
+/* *hide and show cards */
+#start {
+  display: block;
+}
+
+#question {
+  display: none;
+}
+
+#end {
+  display: none;
+}
+
+#highScore {
+  display: none;
+}
+
 
 h1 {
     text-align: center;
@@ -43,7 +72,7 @@ li {
     letter-spacing: 0.21px;
     line-height: 16px;
     max-width: 255px;
-    padding: 20px 52px;
+    padding: 10px 52px;
     text-align: center;
     transition-duration: 0.15s;
     transition-property: background-color;
@@ -74,10 +103,43 @@ li {
     clear: both;
   }
 
-  img {
+  /* img {
+    margin: 0, auto;
+    width: 80%;
+    display: block;
+    position: relative;
+        top: 0;
+        left: 0;
+        border: 1px solid #000000;
+
+  } */
+
+  .backgroundImg {
     margin: auto;
     width: 80%;
     display: block;
+    position: relative;
+        top: 0;
+        left: 0;
+        border: 1px solid #000000;
+
+  }
+
+
+
+  .altPkmon {
+    position: absolute;
+    top: 55%;
+    left: 33%;
+    border: 1px solid #000000;
+    display: block;
+    margin: auto;
+    width: 226px;
+    height: 200px;
+    cursor: pointer;
+    padding-bottom: 40px;
+    filter: brightness(0.0);
+
   }
 
   
@@ -95,6 +157,8 @@ li {
       width: 80vw;
     }
   }
+
+
     
 
 
