@@ -7,8 +7,6 @@ var D = document.querySelector("#optionD");
 // var questionCard = document.querySelector(".card");
 
 var question = document.querySelector("#question")
-var startButton = document.getElementById("startButton");
-var endCard = document.getElementById("end");
 
 var timerSeconds = 60;
 var score = 0;
@@ -17,10 +15,10 @@ var timeLeftElement = document.getElementById("timeLeft");
 // **idea 
 var currentQuestionIndex = 0;
 var timerInterval;
-var timerSeconds = 60; // Set the initial time
-var score = 0; // Initialize the score
+var timerSeconds = 60;
+var score = 0;
 var startButton = document.getElementById("startButton");
-var questionCard = document.getElementById("question");
+
 var endCard = document.getElementById("end");
 var timeLeftElement = document.getElementById("timeLeft");
 // **idea 
@@ -39,89 +37,31 @@ var images = [
 
 //*question logic
 
-  var questions = {
-
+  var questions = [
+{
     choices1: ["pika","2","3","4"],
-       
-    choices2: ["1","pika","3","4"],
-
-    choices3: ["1","2","pika","4"],
+    answer1: "pika",
     
+},
+{
+    choices2: ["1","pika","3","4"],
+    answer1: "pika",
+    
+},
+{
+    choices3: ["1","2","pika","4"],
+    answer1: "pika",
+    
+},
+{
     choices4: ["1","2","3","pika"],
- 
-    // choices5: ["1","2","3","4"],
-  }
-
-  var answers = {
-    answer1: ["pika"],
-    answer2: ["pika"],
-    answer3: ["pika"],
-    answer4: ["pika"],
-
-  }
-
-function linkButtons() {
-    var firstQuestion = questions.choices1;
-
-    if (firstQuestion.length >= 4) {
-        // Set the text content of each button
-        A.textContent = firstQuestion[0];
-        B.textContent = firstQuestion[1];
-        C.textContent = firstQuestion[2];
-        D.textContent = firstQuestion[3];
-      }
-    }
-linkButtons()
-//*buttons linked
+    answer1: "pika",
+    
+},
+  ];
+    
 
 
-
-//*pkmon images go here
-  pkmon.style.backgroundImage = "assets/img/pika.png";
-
-  function navigate(direction) {
-    index = index + direction;
-    if (index < 0) { 
-      index = images.length - 1; 
-    } else if (index > images.length - 1) { 
-      index = 0;
-    }
-    currentImage = images[index];
-    pkmon.style.backgroundImage = "url('" + currentImage + "')";
-  }
-
-
-  pkmon.addEventListener("click", function(event) {
-   event.stopPropagation();
-
-    navigate(1);
-
-  });
-
-//*for hide/show on button click */
-
-//   card.addEventListener("click", function(event) {
-
-//     console.log("Clicked on:", event.target);
-
-
-//     var element = event.target;
-//     if (element.matches("button")) {
-//         var state = element.getAttribute("data-state");
-
-//         console.log("Data-state attribute:", state);
-
-
-//         if (state === "shown") {
-//             element.dataset.state = "hidden";
-//       element.setAttribute("data-state", "hidden");
-//       element.setAttribute("src", element.dataset.hidden);
-//     } else {
-//         element.dataset.state = "shown";
-//         element.setAttribute("src", element.dataset.shown);
-//       }
-//     }
-//   });
 
 
 
@@ -129,10 +69,36 @@ linkButtons()
 
   startButton.addEventListener("click", function () {
     document.getElementById("start").style.display = "none";
-    questionCard.style.display = "block";
+    question.style.display = "block";
     startTimer();
     displayQuestion();
   });
+
+
+
+
+
+
+
+//   function linkButtons() {
+//     var firstQuestion = questions.choices1;
+
+//     if (firstQuestion.length >= 4) {
+//         // Set the text content of each button
+//         A.textContent = firstQuestion[0];
+//         B.textContent = firstQuestion[1];
+//         C.textContent = firstQuestion[2];
+//         D.textContent = firstQuestion[3];
+//       }
+//     }
+// linkButtons()
+// //*buttons linked
+
+
+
+
+
+
 
 // **timer logic 
 
@@ -185,10 +151,55 @@ function startTimer() {
 //   });
 
 
+//*for hide/show on button click */
+
+//   card.addEventListener("click", function(event) {
+
+//     console.log("Clicked on:", event.target);
+
+
+//     var element = event.target;
+//     if (element.matches("button")) {
+//         var state = element.getAttribute("data-state");
+
+//         console.log("Data-state attribute:", state);
+
+
+//         if (state === "shown") {
+//             element.dataset.state = "hidden";
+//       element.setAttribute("data-state", "hidden");
+//       element.setAttribute("src", element.dataset.hidden);
+//     } else {
+//         element.dataset.state = "shown";
+//         element.setAttribute("src", element.dataset.shown);
+//       }
+//     }
+//   });
 
 
 
 
+//*pkmon images go here
+pkmon.style.backgroundImage = "assets/img/pika.png";
+
+function navigate(direction) {
+  index = index + direction;
+  if (index < 0) { 
+    index = images.length - 1; 
+  } else if (index > images.length - 1) { 
+    index = 0;
+  }
+  currentImage = images[index];
+  pkmon.style.backgroundImage = "url('" + currentImage + "')";
+}
+
+
+pkmon.addEventListener("click", function(event) {
+ event.stopPropagation();
+
+  navigate(1);
+
+});
 
 
 
@@ -272,4 +283,5 @@ function startTimer() {
 //TODO create a function that will display the next question and choices once they answer the following question
 
 
-//TODO create a start button that wont display the questions until pressed
+//TODO create a start button that wont display the questions until 
+
