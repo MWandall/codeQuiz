@@ -1,8 +1,30 @@
 var pkmon = document.querySelector(".altPkmon");
-var A = document.querySelector("#optionA")
-var B = document.querySelector("#optionB")
-var C = document.querySelector("#optionC")
-var D = document.querySelector("#optionD")
+
+var A = document.querySelector("#optionA");
+var B = document.querySelector("#optionB");
+var C = document.querySelector("#optionC");
+var D = document.querySelector("#optionD");
+// var questionCard = document.querySelector(".card");
+
+var question = document.querySelector("#question")
+var startButton = document.getElementById("startButton");
+var endCard = document.getElementById("end");
+
+var timerSeconds = 60;
+var score = 0;
+var timeLeftElement = document.getElementById("timeLeft");
+
+// **idea 
+var currentQuestionIndex = 0;
+var timerInterval;
+var timerSeconds = 60; // Set the initial time
+var score = 0; // Initialize the score
+var startButton = document.getElementById("startButton");
+var questionCard = document.getElementById("question");
+var endCard = document.getElementById("end");
+var timeLeftElement = document.getElementById("timeLeft");
+// **idea 
+
 
 
 //*image bank
@@ -76,6 +98,91 @@ linkButtons()
 
   });
 
+//*for hide/show on button click */
+
+//   card.addEventListener("click", function(event) {
+
+//     console.log("Clicked on:", event.target);
+
+
+//     var element = event.target;
+//     if (element.matches("button")) {
+//         var state = element.getAttribute("data-state");
+
+//         console.log("Data-state attribute:", state);
+
+
+//         if (state === "shown") {
+//             element.dataset.state = "hidden";
+//       element.setAttribute("data-state", "hidden");
+//       element.setAttribute("src", element.dataset.hidden);
+//     } else {
+//         element.dataset.state = "shown";
+//         element.setAttribute("src", element.dataset.shown);
+//       }
+//     }
+//   });
+
+
+
+// **start button 
+
+  startButton.addEventListener("click", function () {
+    document.getElementById("start").style.display = "none";
+    questionCard.style.display = "block";
+    startTimer();
+    displayQuestion();
+  });
+
+// **timer logic 
+
+function startTimer() {
+    timerInterval = setInterval(function () {
+      timerSeconds--;
+      timeLeftElement.textContent = timerSeconds;
+  
+      if (timerSeconds <= 0) {
+        clearInterval(timerInterval);
+        endGame();
+      }
+    }, 1000); 
+  }
+
+
+
+
+
+
+
+//   var card = document.querySelector(".card");
+
+// var myDiv = document.getElementById("myDiv");
+// **************
+// var toggleButton = document.getElementById("toggleButton");
+// toggleButton.addEventListener("click", function() {
+//   var currentDisplay = myDiv.style.display;
+//   if (currentDisplay === "none" || currentDisplay === "") {
+//     myDiv.style.display = "block";
+//   } else {
+//     myDiv.style.display = "none";
+//   }
+// });
+
+
+// imageContainer.addEventListener("click", function(event) {
+//     var element = event.target;
+//     if (element.matches("img")) {
+//       var state = element.getAttribute("data-state");
+//       if (state === "still") {
+//         element.dataset.state = "animate";
+//         element.setAttribute("data-state", "animate");
+//         element.setAttribute("src", element.dataset.animate);
+//       } else {
+//         element.dataset.state = "still";
+//         element.setAttribute("src", element.dataset.still);
+//       }
+//     }
+//   });
 
 
 
@@ -84,6 +191,13 @@ linkButtons()
 
 
 
+
+
+
+
+
+
+//*navigate is temp for pkmon image load
   navigate(0);
 
 

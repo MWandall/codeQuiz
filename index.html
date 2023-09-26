@@ -9,6 +9,7 @@
 </head>
 <body>
 
+    <!-- *highScoreLink addEventListener so #highScore.style.display = "block"; -->
     <header> 
         <p>high score link</p>
         <p>timer</p>
@@ -17,15 +18,15 @@
 <!-- *only thing shown on start  -->
 
 
-<div class="card" id="start">
+<div class="card" id="start" data-state="shown">
     <h1>start quiz?</h1>
-    <button>START</button>
+    <button id="startButton">START</button>
 
 </div>
 
 <!-- *first question slide  -->
 
-<div class="card" id="question">
+<div class="card" id="question" data-state="hidden">
     <h1>Who's That Pokemon?</h1>
     
     <img src="./assets/img/who_s_that_pokemon__by_amitlu89_d47rmjf-375w-2x.jpg" alt="who's that pokemon background" class="backgroundImg">
@@ -34,10 +35,63 @@
 
     <button id="optionA"></button>
     <button id="optionB">B: option</button>
-    <button id="optionC">C: option</button>
+    <button id="optionC">C: option</button>  
     <button id="optionD">D: option</button>
 
 </div>
+
+
+<!-- **where you enter your name and your score is given  -->
+
+<div class="card" id="end" data-state="hidden">
+<h1>Congrats!</h1>
+<form>
+    <ul>
+        <li>
+        <label for="score">Final Score: <span id="timeLeft"></span></label>
+        </li>
+        <li>
+            <label for="name">Your Name</label>
+            <input id="name" type="text" name="Name" />
+        </li>
+    </ul>
+    <button id="save">SAVE</button>
+
+</form>
+</div>
+<div class="card" id="highScore" data-state="hidden">
+    <h1>High Scores:</h1>
+    
+    <p>Score: <span id="saved-score"></span></p>
+    <p>Name: <span id="saved-name"></span></p>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- * Idea for button for show/hide linked to JS and CSS
+<button id="toggleButton">Toggle Element</button>
+<div id="elementToToggle">This is the element to hide/show.</div> -->
+
 
 <!-- <div class="card" id="q2">
     <h1>Who's That Pokemon?</h1>
@@ -70,54 +124,3 @@
     <!-- correct or wrong response from previous question goes here -->
 
 <!-- </div> -->
-
-<!-- **where you enter your name and your score is given  -->
-
-<div class="card" id="end">
-<h1>Congrats!</h1>
-<form>
-    <ul>
-        <li>
-        <label for="score">Final Score: <span id="timeLeft"></span></label>
-        </li>
-        <li>
-            <label for="name">Your Name</label>
-            <input id="name" type="text" name="Name" />
-        </li>
-    </ul>
-    <button id="save">SAVE</button>
-
-</form>
-</div>
-<div class="card" id="highScore">
-    <h1>High Scores:</h1>
-    
-    <p>Score: <span id="saved-score"></span></p>
-    <p>Name: <span id="saved-name"></span></p>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="./assets/script.js"></script>
-</body>
-</html>
-
-
-
-
-<!-- * Idea for button for show/hide linked to JS and CSS
-<button id="toggleButton">Toggle Element</button>
-<div id="elementToToggle">This is the element to hide/show.</div> -->
