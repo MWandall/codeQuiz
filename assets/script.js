@@ -151,9 +151,8 @@ function startTimer() {
 document.querySelector("#save")
 save.addEventListener("click", function () {
     var playerInitials = document.getElementById("initials").value;
-    if (playerInitials) {
       // Store the player's name and score
-    //   var highScoreElement = document.getElementById("highScore");
+      // var highScoreElement = document.getElementById("highScore");
       var savedScoreElement = document.getElementById("saved-score");
       var savedInitialsElement = document.getElementById("saved-initials");
   
@@ -163,13 +162,15 @@ save.addEventListener("click", function () {
 
     //   highScoreElement.style.display = "block";
     } 
-  });
+  );
 
-var scoreLink = document.querySelector("#scoreLink");
-scoreLink.addEventListener("click", function () {
-    // document.getElementById("end").style.display = "none";
-    qCard.style.display = "block";
-});
+
+// var highScoreCard = document.querySelector("highScoreCard")
+// var scoreLink = document.querySelector("#scoreLink");
+// scoreLink.addEventListener("click", function () {
+//     // document.getElementById("end").style.display = "none";
+//     highScoreCard.style.display = "block";
+// });
 
 
 

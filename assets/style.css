@@ -46,7 +46,7 @@ p {
   display: none;
 }
 
-#highScore[data-state="hidden"] {
+#highScoreCard[data-state="hidden"] {
   display: none;
 }
 
