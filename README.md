@@ -1,4 +1,5 @@
 # codeQuiz
+# Sorry I didn't finish in time   D': 
 
 
 whos that pokemon image cred :
@@ -12,6 +13,7 @@ The products or characters depicted in these images are © by their respective a
 
 
 
+live link: https://mwandall.github.io/codeQuiz/
 
 
 
