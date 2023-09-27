@@ -8,18 +8,21 @@
     <title>WHOS THAT POKEMON?</title>
 </head>
 <body>
-
+    <main>
     <!-- *highScoreLink addEventListener so #highScore.style.display = "block"; -->
-    <header> 
-        <p>high score link</p>
-        <p>timer</p>
+    <aside ></aside>
+        <aside id="timeLeft"><p>timer</p></aside>
+        
+        
     
-    </header>
+    
 <!-- *only thing shown on start  -->
 
 
 <div class="card" id="start" data-state="shown">
+
     <h1>start quiz?</h1>
+    <p id="highScoreLink">high score link</p>
     <button id="startButton">START</button>
 
 </div>
@@ -31,12 +34,13 @@
     
     <img src="./assets/img/who_s_that_pokemon__by_amitlu89_d47rmjf-375w-2x.jpg" alt="who's that pokemon background" class="backgroundImg">
 
-    <div class="altPkmon" ></div>
+    <div  ><img class="altPkmon"  src="" alt=""></div>
 
-    <button id="optionA"></button>
-    <button id="optionB">B: option</button>
-    <button id="optionC">C: option</button>  
-    <button id="optionD">D: option</button>
+    <button class="buttonClick" id="optionA"></button>
+    <button class="buttonClick" id="optionB"></button>
+    <button class="buttonClick" id="optionC"></button>  
+    <button class="buttonClick" id="optionD"></button>
+    <p id="correct-wrong"></p>
 
 </div>
 
@@ -44,15 +48,15 @@
 <!-- **where you enter your name and your score is given  -->
 
 <div class="card" id="end" data-state="hidden">
-<h1>Congrats!</h1>
+<h1>Game!</h1>
 <form>
     <ul>
         <li>
-        <label for="score">Final Score: <span id="timeLeft"></span></label>
+        <label for="score">Final Score: <span class id="timeFinal"></span></label>
         </li>
         <li>
-            <label for="name">Your Name</label>
-            <input id="name" type="text" name="Name" />
+            <label for="name">Enter Initials:</label>
+            <input id="name"  maxlength="3" type="text" name="Name" />
         </li>
     </ul>
     <button id="save">SAVE</button>
@@ -66,7 +70,7 @@
     <p>Name: <span id="saved-name"></span></p>
   </div>
 
-
+</main>
 
 
 
