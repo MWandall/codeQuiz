@@ -41,28 +41,29 @@ var images = [
 
 
   pkmon.setAttribute("src", images[0]);
+  pkmon.setAttribute("alt", "Pikachu, Squirtle, Eevee, Dragonite respectively");
 
 //*question logic
 var currentQuestionIndex = 0;
   var questions = [
 {
-    choices: ["pika","2","3","4"],
-    answer: "pika",
+    choices: ["Pikachu","Gastly","Meouth","Vulpix"],
+    answer: "Pikachu",
     
 },
 {
-    choices: ["1","pika","3","4"],
-    answer: "pika",
+    choices: ["Ditto","Polywag","Mankey","Squirtle"],
+    answer: "Squirtle",
     
 },
 {
-    choices: ["1","2","pika","4"],
-    answer: "pika",
+    choices: ["Raticate","Eevee","Dotrio","Gloom"],
+    answer: "Eevee",
     
 },
 {
-    choices: ["1","2","3","pika"],
-    answer: "pika",
+    choices: ["Dragonair","Jolteon","Pidgy","Dragonite"],
+    answer: "Dragonite",
     
 },
   ];
@@ -77,7 +78,7 @@ var currentQuestionIndex = 0;
   startButton.addEventListener("click", function () {
     document.getElementById("start").style.display = "none";
     qCard.style.display = "block";
-    startTimer();
+    // startTimer();
     displayQuestion();
   });
 
