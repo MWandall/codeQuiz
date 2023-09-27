@@ -78,7 +78,7 @@ var currentQuestionIndex = 0;
   startButton.addEventListener("click", function () {
     document.getElementById("start").style.display = "none";
     qCard.style.display = "block";
-    // startTimer();
+    startTimer();
     displayQuestion();
   });
 
@@ -148,7 +148,22 @@ function startTimer() {
     timeFinal.textContent = timerSeconds;
   }
 
+document.querySelector("#save")
+save.addEventListener("click", function () {
+    var playerInitials = document.getElementById("initials").value;
+    if (playerInitials) {
+      // Store the player's name and score
+      var highScoreElement = document.getElementById("highScore");
+      var savedScoreElement = document.getElementById("saved-score");
+      var savedInitialsElement = document.getElementById("saved-initials");
+  
+      savedScoreElement.textContent = score;
+      savedInitialsElement.textContent = playerInitials;
+  
 
+      highScoreElement.style.display = "block";
+    } 
+  });
 
 
 
